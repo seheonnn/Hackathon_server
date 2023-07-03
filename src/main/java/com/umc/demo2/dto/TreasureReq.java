@@ -26,5 +26,16 @@ public class TreasureReq {
         private String comment;
     }
 
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @Getter
+    @Setter
+    public static class PostTreasure{
+        private String title;
+        private String content;
+        private Double latitude;
+        private Double longitude;
+    }
 
 }
