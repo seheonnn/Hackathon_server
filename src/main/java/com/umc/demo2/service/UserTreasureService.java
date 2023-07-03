@@ -10,8 +10,11 @@ import com.umc.demo2.repository.UserRepository;
 import com.umc.demo2.repository.UserTreasureRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.transaction.Transactional;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,12 +32,21 @@ public class UserTreasureService {
 
 
     @Transactional
-    public UserTreasure create(TreasureReq.CreateUserTreasure request){
+    public UserTreasure create(List<MultipartFile> files, TreasureReq.CreateUserTreasure request) throws IOException {
+        String filepath = "ubuntu@43.202.79.30:~/GreenQuest-BE/src/main/images/";
+        List<String> list = new ArrayList<>();
+        for (MultipartFile file : files) {
+            String originalfileName = file.getOriginalFilename();
+            File dest = new File(filepath + originalfileName);
+            file.transferTo(dest);
+            list.add(originalfileName);
+        }
 
         UserTreasure userTreasure = UserTreasure.builder()
                 .userId(request.getUserId())
                 .treasureId(request.getTreasureId())
                 .comment(request.getComment())
+                .files(String.join(",", list))
                 .build();
 
         return userTreasureRepository.save(userTreasure);
