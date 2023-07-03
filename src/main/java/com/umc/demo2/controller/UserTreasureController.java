@@ -30,9 +30,11 @@ public class UserTreasureController {
     }
 
     @PatchMapping("/comment/{userId}/{treasureId}")
-    public BaseResponse<String> updateUserTreasure(@PathVariable(name = "userId")Long userId, @PathVariable(name ="treasureId")Long treasureId, @RequestBody TreasureReq.UpdateUserTreasure request){
+    public BaseResponse<String> updateUserTreasure(@PathVariable(name = "userId")Long userId, @PathVariable(name ="treasureId")Long treasureId, @RequestBody TreasureReq.UpdateUserTreasure request) {
         UserTreasure userTreasure = userTreasureService.update(userId, treasureId, request);
         return new BaseResponse<>("방명록 수정 완료");
+
+    }
 
     @GetMapping("/user/{userId}/treasures")
     public BaseResponse<List<TreasureRes.UserTreasureRes>> getUserTreasureList(@PathVariable Long userId){
