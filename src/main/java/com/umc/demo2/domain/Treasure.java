@@ -21,7 +21,7 @@ public class Treasure extends BaseEntity{
 
     private String content;
 
-    private Point point;
+//    private Point point;
     private Double latitude;
     private Double longitude;
 
