@@ -1,11 +1,13 @@
 package com.umc.demo2.controller;
 
+
+import com.umc.demo2.domain.BaseEntity;
 import com.umc.demo2.domain.UserTreasure;
+import com.umc.demo2.dto.TreasureReq;
 import com.umc.demo2.dto.TreasureRes;
 import com.umc.demo2.global.BaseResponse;
 import com.umc.demo2.service.UserTreasureService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,18 +19,25 @@ public class UserTreasureController {
 
     private final UserTreasureService userTreasureService;
 
-//    @PostMapping("/comment")
-//    public ResponseEntity<UserTreasureResponseDto.CreateUserTreasureDto> createuserTreasure(@RequestBody UserTreasureRequestDto.CreateUserTreasureDto request){
-//
-//    }
-//
-//    @PatchMapping("/comment/{userId}/{treasureId}")
-//    public ResponseEntity<UserTreasureResponseDto.UpdateUserTreasureDto> updateUserTreasure(@PathVariable(name = "userId")Long userId, @PathVariable(name ="treasureId")Long treasureId, @RequestBody UserTreasureRequestDto.UpdateUserTreasureDto request){
+
+    @PostMapping("/comment")
+    public BaseResponse<String> createUserTreasure(@RequestBody TreasureReq.CreateUserTreasure request){
+        UserTreasure userTreasure = userTreasureService.create(request);
+        return new BaseResponse<>("새로운 방명록 등록 완료");
+
+
+    }
+
+    @PatchMapping("/comment/{userId}/{treasureId}")
+    public BaseResponse<String> updateUserTreasure(@PathVariable(name = "userId")Long userId, @PathVariable(name ="treasureId")Long treasureId, @RequestBody TreasureReq.UpdateUserTreasure request){
+        UserTreasure userTreasure = userTreasureService.update(userId, treasureId, request);
+        return new BaseResponse<>("방명록 수정 완료");
 
     @GetMapping("/user/{userId}/treasures")
     public BaseResponse<List<TreasureRes.UserTreasureRes>> getUserTreasureList(@PathVariable Long userId){
         return new BaseResponse<>(userTreasureService.getUserTreasureList(userId));
     }
+
 
     @GetMapping("/user/{userId}/treasures/count")
     public BaseResponse<TreasureRes.UserSuccessTreasureCount> countUserTreasureList(@PathVariable Long userId){
