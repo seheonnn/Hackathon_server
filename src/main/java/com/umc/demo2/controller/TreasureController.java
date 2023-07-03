@@ -24,6 +24,8 @@ public class TreasureController {
         return new BaseResponse<>(treasureService.getTreasure(location.getLatitude(), location.getLongitude()));
     }
 
+
+
     @GetMapping("/{treasureId}")
     public BaseResponse<Treasure> getTreasureList(@PathVariable Long treasureId){
         return new BaseResponse<>(treasureService.findByTreasureId(treasureId));
