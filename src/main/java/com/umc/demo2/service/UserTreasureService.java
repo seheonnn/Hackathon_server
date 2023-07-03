@@ -10,24 +10,24 @@ import com.umc.demo2.repository.UserRepository;
 import com.umc.demo2.repository.UserTreasureRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@Transactional(readOnly = true)
+//@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class UserTreasureService {
 
-    private final UserRepository userRepository;
-  
-    private final TreasureRepository treasureRepository;
-
     private final UserTreasureRepository userTreasureRepository;
 
-  
-  
+    private final UserRepository userRepository;
+
+    private final TreasureRepository treasureRepository;
+
+
+
     @Transactional
     public UserTreasure create(TreasureReq.CreateUserTreasure request){
 
@@ -85,6 +85,19 @@ public class UserTreasureService {
 
         return result;
     }
-  
-  
+
+
+    public List<UserTreasureRepository.TheMostMissions> getTheMostMissions(){
+        List<UserTreasureRepository.TheMostMissions> result = userTreasureRepository.getTheMostMissionList();
+        return result;
+    }
+
+    public void giveCommentApproval(Long userId, Long treasureId) {
+        UserTreasure userTreasure = userTreasureRepository.findUserTreasureByUserIdAndTreasureId(userId, treasureId);
+
+        userTreasure.setStatus(1);
+        userTreasureRepository.save(userTreasure);
+    }
+
+
 }

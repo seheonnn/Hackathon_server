@@ -12,6 +12,7 @@ public class UserTreasureConverter {
         return TreasureRes.UserTreasure.builder()
                 .userId(usertreasure.getUserId())
                 .comment(usertreasure.getComment())
+                .createdAt(usertreasure.getCreatedAt())
                 .build();
     }
 

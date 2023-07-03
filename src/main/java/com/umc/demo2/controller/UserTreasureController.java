@@ -6,6 +6,7 @@ import com.umc.demo2.domain.UserTreasure;
 import com.umc.demo2.dto.TreasureReq;
 import com.umc.demo2.dto.TreasureRes;
 import com.umc.demo2.global.BaseResponse;
+import com.umc.demo2.repository.UserTreasureRepository;
 import com.umc.demo2.service.UserTreasureService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -35,10 +36,11 @@ public class UserTreasureController {
     }
 
     @PatchMapping("/comment/{userId}/{treasureId}")
-    public BaseResponse<String> updateUserTreasure(@PathVariable(name = "userId")Long userId, @PathVariable(name ="treasureId")Long treasureId, @RequestBody TreasureReq.UpdateUserTreasure request){
+    public BaseResponse<String> updateUserTreasure(@PathVariable(name = "userId")Long userId, @PathVariable(name ="treasureId")Long treasureId, @RequestBody TreasureReq.UpdateUserTreasure request) {
         UserTreasure userTreasure = userTreasureService.update(userId, treasureId, request);
         return new BaseResponse<>("방명록 수정 완료");
     }
+
 
     @GetMapping("/user/{userId}/treasures")
     public BaseResponse<List<TreasureRes.UserTreasureRes>> getUserTreasureList(@PathVariable Long userId){
@@ -49,6 +51,19 @@ public class UserTreasureController {
     @GetMapping("/user/{userId}/treasures/count")
     public BaseResponse<TreasureRes.UserSuccessTreasureCount> countUserTreasureList(@PathVariable Long userId){
         return new BaseResponse<>(userTreasureService.countUserTreasureList(userId));
+    }
+
+    @GetMapping("/treasure/rank")
+    public BaseResponse<List<UserTreasureRepository.TheMostMissions>> getTheMostMissions(){
+        return new BaseResponse<>(userTreasureService.getTheMostMissions());
+    }
+
+    @PatchMapping("/{userId}/{treasureId}/approval")
+    public BaseResponse<String> giveCommentApproval(@PathVariable(value = "userId") Long userId,
+                                                    @PathVariable(value = "treasureId") Long treasureId){
+        userTreasureService.giveCommentApproval(userId, treasureId);
+
+        return new BaseResponse<>("관리자 승인이 완료되었습니다");
     }
 
 }

@@ -1,11 +1,7 @@
 package com.umc.demo2.controller;
 
-import com.umc.demo2.domain.Picture;
-import com.umc.demo2.service.PictureService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
