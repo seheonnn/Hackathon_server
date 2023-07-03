@@ -32,7 +32,6 @@ public class UserTreasureController {
         UserTreasure userTreasure = userTreasureService.create(request);
         return new BaseResponse<>("새로운 방명록 등록 완료");
 
-
     }
 
     @PatchMapping("/comment/{userId}/{treasureId}")
