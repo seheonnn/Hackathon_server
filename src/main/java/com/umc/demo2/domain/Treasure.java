@@ -22,11 +22,11 @@ public class Treasure extends BaseEntity{
 
     private String content;
 
-//    private Point point;
     private Double latitude;
     private Double longitude;
 
-    //photo
+    @Column(name = "files")
+    private String files;
 
     public void Location(Double latitude, Double longitude) {
         this.latitude = latitude;

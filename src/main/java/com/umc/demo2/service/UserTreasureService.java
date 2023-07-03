@@ -33,18 +33,10 @@ public class UserTreasureService {
 
     @Transactional
     public UserTreasure create(List<MultipartFile> files, TreasureReq.CreateUserTreasure request) throws IOException {
-        String filepath = "/home/ubuntu/GreenQuest-BE/src/main/images/";
-        List<String> list = new ArrayList<>();
-        for (MultipartFile file : files) {
-            String originalfileName = file.getOriginalFilename();
-            File dest = new File(filepath + originalfileName);
-            file.transferTo(dest);
-            list.add(originalfileName);
-        }
 
         UserTreasure userTreasure = UserTreasure.builder()
                 .comment(request.getComment())
-                .files(String.join(",", list))
+                .files(FileService.fileUpload(files))
                 .build();
 
         return userTreasureRepository.save(userTreasure);
