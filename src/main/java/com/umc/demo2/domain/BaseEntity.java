@@ -1,4 +1,4 @@
-package com.umc.demo2.global;
+package com.umc.demo2.domain;
 
 import lombok.Getter;
 import lombok.Setter;
