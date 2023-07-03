@@ -13,7 +13,7 @@ public class TreasureRes {
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     public static class UserTreasure{
 
-        private Long userId;
+        private String nickname;
         private String comment;
 
         private LocalDateTime createdAt;

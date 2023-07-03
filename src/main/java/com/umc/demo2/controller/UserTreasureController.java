@@ -7,6 +7,7 @@ import com.umc.demo2.dto.TreasureReq;
 import com.umc.demo2.dto.TreasureRes;
 import com.umc.demo2.global.BaseResponse;
 import com.umc.demo2.repository.UserTreasureRepository;
+import com.umc.demo2.service.UserService;
 import com.umc.demo2.service.UserTreasureService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +24,7 @@ import java.util.List;
 public class UserTreasureController {
 
     private final UserTreasureService userTreasureService;
+    private final UserService userService;
 
     @GetMapping("/comment/{treasureId}/comments")
     public BaseResponse<TreasureRes.UserTreasureListDto> getCommentList(@PathVariable (name = "treasureId") Long treasureId){
