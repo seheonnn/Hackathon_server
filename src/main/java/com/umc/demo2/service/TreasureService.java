@@ -11,8 +11,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.management.Query;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -42,12 +46,13 @@ public class TreasureService {
         return treasureRepository.findByTreasureId(treasureId);
     }
 
-    public void postTreasure(TreasureReq.PostTreasure postTreasure) {
+    public void postTreasure(List<MultipartFile> files, TreasureReq.PostTreasure postTreasure) throws IOException {
         Treasure newTreasure = Treasure.builder()
                 .title(postTreasure.getTitle())
                 .content(postTreasure.getContent())
                 .latitude(postTreasure.getLatitude())
                 .longitude(postTreasure.getLongitude())
+                .files(FileService.fileUpload(files))
                 .build();
         treasureRepository.save(newTreasure);
     }

@@ -10,7 +10,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Slf4j
@@ -34,8 +36,11 @@ public class TreasureController {
     }
 
     @PostMapping("")
-    public BaseResponse<String> postTreasure(@RequestBody TreasureReq.PostTreasure postTreasure) {
-        treasureService.postTreasure(postTreasure);
+    public BaseResponse<String> postTreasure(
+            @RequestPart(value = "files", required = false) List<MultipartFile> files,
+            @RequestPart(value = "request") TreasureReq.PostTreasure postTreasure
+    ) throws IOException {
+        treasureService.postTreasure(files, postTreasure);
         return new BaseResponse<>("보물이 저장되었습니다");
 
     }
