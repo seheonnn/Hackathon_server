@@ -20,10 +20,12 @@ public class Treasure extends BaseEntity{
     private String title;
 
     private String content;
-    private Point point;
 
+    private Point point;
     private Double latitude;
     private Double longitude;
+
+    //photo
 
     public void Location(Double latitude, Double longitude) {
         this.latitude = latitude;

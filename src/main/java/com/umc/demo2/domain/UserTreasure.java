@@ -5,18 +5,29 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "user_treasure")
 @Getter
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class User {
+public class UserTreasure {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Long id;
+
     @Column(name = "user_id")
     private Long userId;
 
-    private String nickname;
+    @Column(name = "treasure_id")
+    private Long treasureId;
+
+    private String comment;
+
+    //photo
+
+    private int status;
+
 
 }
