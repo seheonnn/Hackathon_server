@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TreasureRepository extends JpaRepository<Treasure, Long> {
+
+    Treasure findByTreasureId(Long treasureId);
 }
