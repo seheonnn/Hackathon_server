@@ -15,6 +15,8 @@ public class UserService {
     public User update(Long userId, UserReq.UpdateNickname request){
         User user = userRepository.findById(userId).get();
         user.update(request.getNickname());
+        userRepository.save(user);
+
         return user;
 
     }
