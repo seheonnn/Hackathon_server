@@ -43,8 +43,6 @@ public class UserTreasureService {
         }
 
         UserTreasure userTreasure = UserTreasure.builder()
-                .userId(request.getUserId())
-                .treasureId(request.getTreasureId())
                 .comment(request.getComment())
                 .files(String.join(",", list))
                 .build();

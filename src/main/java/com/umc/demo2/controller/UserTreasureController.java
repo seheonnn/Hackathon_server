@@ -39,6 +39,7 @@ public class UserTreasureController {
         UserTreasure userTreasure = userTreasureService.create(files, request);
         return new BaseResponse<>("새로운 방명록 등록 완료");
     }
+  
 
     @PatchMapping("/comment/{userId}/{treasureId}")
     public BaseResponse<String> updateUserTreasure(@PathVariable(name = "userId")Long userId, @PathVariable(name ="treasureId")Long treasureId, @RequestBody TreasureReq.UpdateUserTreasure request) {
