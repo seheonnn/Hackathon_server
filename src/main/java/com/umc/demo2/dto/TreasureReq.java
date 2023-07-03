@@ -13,6 +13,8 @@ public class TreasureReq {
     @Getter
     @Setter
     public static class CreateUserTreasure{
+        private Long userId;
+        private Long treasureId;
         private String comment;
     }
 

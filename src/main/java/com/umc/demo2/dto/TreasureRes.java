@@ -17,6 +17,7 @@ public class TreasureRes {
         private String comment;
 
         private LocalDateTime createdAt;
+        private String files;
 
     }
 

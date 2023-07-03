@@ -35,6 +35,8 @@ public class UserTreasureService {
     public UserTreasure create(List<MultipartFile> files, TreasureReq.CreateUserTreasure request) throws IOException {
 
         UserTreasure userTreasure = UserTreasure.builder()
+                .userId(request.getUserId())
+                .treasureId(request.getTreasureId())
                 .comment(request.getComment())
                 .files(FileService.fileUpload(files))
                 .build();
