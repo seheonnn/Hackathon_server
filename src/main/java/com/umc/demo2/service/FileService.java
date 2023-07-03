@@ -9,8 +9,7 @@ import java.util.List;
 
 public class FileService {
     public static String fileUpload(List<MultipartFile> files) throws IOException {
-        String filepath = "/Users/hoseheon/Desktop/Hackathon_server/src/main/images";
-//        String filepath = "/home/ubuntu/GreenQuest-BE/src/main/images/";
+        String filepath = "/home/ubuntu/GreenQuest-BE/src/main/images/";
         List<String> list = new ArrayList<>();
         for (MultipartFile file : files) {
             String originalfileName = file.getOriginalFilename();
