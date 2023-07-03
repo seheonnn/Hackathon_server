@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public class LocaitonController {
 
-    @GetMapping("...")
-    public CustomResponseEntity<List<LocationDto.mapListContent>> myMapList(
-            @RequestParam final Double x,
-            @RequestParam final Double y,
-			...
-    ) {
-        return CustomResponseEntity.success(LocationService.listMyMap(x, y));
-    }
+//    @GetMapping("...")
+//    public CustomResponseEntity<List<LocationDto.mapListContent>> myMapList(
+//            @RequestParam final Double x,
+//            @RequestParam final Double y,
+//			...
+//    ) {
+//        return CustomResponseEntity.success(LocationService.listMyMap(x, y));
+//    }
 
 }
