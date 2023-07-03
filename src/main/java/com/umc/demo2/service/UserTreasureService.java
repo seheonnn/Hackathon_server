@@ -32,8 +32,6 @@ public class UserTreasureService {
     public UserTreasure create(TreasureReq.CreateUserTreasure request){
 
         UserTreasure userTreasure = UserTreasure.builder()
-                .userId(request.getUserId())
-                .treasureId(request.getTreasureId())
                 .comment(request.getComment())
                 .build();
 
