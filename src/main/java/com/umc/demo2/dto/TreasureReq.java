@@ -10,8 +10,6 @@ public class TreasureReq {
     @Getter
     @Setter
     public static class CreateUserTreasure{
-        private Long userId;
-        private Long treasureId;
         private String comment;
     }
 
@@ -21,8 +19,6 @@ public class TreasureReq {
     @Getter
     @Setter
     public static class UpdateUserTreasure{
-        private Long userId;
-        private Long treasureId;
         private String comment;
     }
 
