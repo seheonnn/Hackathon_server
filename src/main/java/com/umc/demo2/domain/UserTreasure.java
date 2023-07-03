@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 @Entity(name = "user_treasure")
 @Getter
+@Setter
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

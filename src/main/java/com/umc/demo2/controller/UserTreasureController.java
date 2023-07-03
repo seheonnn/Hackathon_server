@@ -47,9 +47,17 @@ public class UserTreasureController {
         return new BaseResponse<>(userTreasureService.countUserTreasureList(userId));
     }
 
-    @GetMapping("/rank")
+    @GetMapping("/treasure/rank")
     public BaseResponse<List<UserTreasureRepository.TheMostMissions>> getTheMostMissions(){
         return new BaseResponse<>(userTreasureService.getTheMostMissions());
+    }
+
+    @PatchMapping("/{userId}/{treasureId}/approval")
+    public BaseResponse<String> giveCommentApproval(@PathVariable(value = "userId") Long userId,
+                                                    @PathVariable(value = "treasureId") Long treasureId){
+        userTreasureService.giveCommentApproval(userId, treasureId);
+
+        return new BaseResponse<>("관리자 승인이 완료되었습니다");
     }
 
 }
