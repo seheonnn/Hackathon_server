@@ -22,7 +22,7 @@ import java.util.List;
 public class TreasureController {
 
     private final TreasureService treasureService;
-    @GetMapping("")
+    @PostMapping("/list")
     public BaseResponse<List<Treasure>> getTreasure(@RequestBody Location location) {
         return new BaseResponse<>(treasureService.getTreasure(location.getLatitude(), location.getLongitude()));
     }
