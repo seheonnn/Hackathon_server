@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-@Transactional(readOnly = true)
+//@Transactional(readOnly = true)
 @RequiredArgsConstructor
 public class UserTreasureService {
 
@@ -25,8 +25,6 @@ public class UserTreasureService {
     private final UserRepository userRepository;
 
     private final TreasureRepository treasureRepository;
-
-    private final UserTreasureRepository userTreasureRepository;
 
 
 
