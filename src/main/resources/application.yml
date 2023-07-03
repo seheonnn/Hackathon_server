@@ -2,8 +2,6 @@ server:
   port: 9000  # 9000? ??? ??
 
 spring:
-  application:
-    name: demo
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
