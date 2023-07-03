@@ -6,22 +6,22 @@ public class TreasureRes {
 
 
     @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
     @Getter
-    @AllArgsConstructor(access = AccessLevel.PROTECTED)
-    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    @Setter
     public static class CreateUserTreasure{
         private Long id;
 
     }
 
     @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
     @Getter
-    @AllArgsConstructor(access = AccessLevel.PROTECTED)
-    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    @Setter
     public static class UpdateUserTreasure{
-
         private Long id;
-
     }
 
     @Builder
