@@ -9,10 +9,14 @@ import com.umc.demo2.global.BaseResponse;
 import com.umc.demo2.repository.UserTreasureRepository;
 import com.umc.demo2.service.UserTreasureService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
+@Slf4j
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/")
@@ -28,11 +32,14 @@ public class UserTreasureController {
 
 
     @PostMapping("/comment")
-    public BaseResponse<String> createUserTreasure(@RequestBody TreasureReq.CreateUserTreasure request){
-        UserTreasure userTreasure = userTreasureService.create(request);
+    public BaseResponse<String> createUserTreasure(
+            @RequestPart(value = "files", required = false) List<MultipartFile> files,
+            @RequestPart(value = "request") TreasureReq.CreateUserTreasure request
+    ) throws IOException {
+        UserTreasure userTreasure = userTreasureService.create(files, request);
         return new BaseResponse<>("새로운 방명록 등록 완료");
-
     }
+  
 
     @PatchMapping("/comment/{userId}/{treasureId}")
     public BaseResponse<String> updateUserTreasure(@PathVariable(name = "userId")Long userId, @PathVariable(name ="treasureId")Long treasureId, @RequestBody TreasureReq.UpdateUserTreasure request) {

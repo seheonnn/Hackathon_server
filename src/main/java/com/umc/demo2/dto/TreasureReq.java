@@ -2,6 +2,9 @@ package com.umc.demo2.dto;
 
 
 import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 public class TreasureReq {
     @Builder

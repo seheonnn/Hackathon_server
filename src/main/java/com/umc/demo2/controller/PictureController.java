@@ -17,8 +17,7 @@ public class PictureController {
 
     @PostMapping("/upload")
     public List<String> upload(@RequestPart List<MultipartFile> files) throws Exception {
-//        String filepath = "../../../../../../images/";
-        String filepath = "/Users/hoseheon/Desktop/Hackathon_server/src/main/images/";
+        String filepath = "ubuntu@43.202.79.30:~/GreenQuest-BE/src/main/images/";
         List<String> list = new ArrayList<>();
         for (MultipartFile file : files) {
             String originalfileName = file.getOriginalFilename();
