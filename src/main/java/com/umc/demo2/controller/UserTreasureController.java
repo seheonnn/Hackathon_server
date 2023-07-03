@@ -20,6 +20,12 @@ public class UserTreasureController {
 
     private final UserTreasureService userTreasureService;
 
+    @GetMapping("/comment/{treasureId}/comments")
+    public BaseResponse<TreasureRes.UserTreasureListDto> getCommentList(@PathVariable (name = "treasureId") Long treasureId){
+        List<UserTreasure> userTreasureList = userTreasureService.findAllByTreasureId(treasureId);
+        return new BaseResponse<>(UserTreasureConverter.toUserTreasureListDto(userTreasureList));
+    }
+
 
     @PostMapping("/comment")
     public BaseResponse<String> createUserTreasure(@RequestBody TreasureReq.CreateUserTreasure request){
@@ -33,8 +39,8 @@ public class UserTreasureController {
     public BaseResponse<String> updateUserTreasure(@PathVariable(name = "userId")Long userId, @PathVariable(name ="treasureId")Long treasureId, @RequestBody TreasureReq.UpdateUserTreasure request) {
         UserTreasure userTreasure = userTreasureService.update(userId, treasureId, request);
         return new BaseResponse<>("방명록 수정 완료");
-
     }
+
 
     @GetMapping("/user/{userId}/treasures")
     public BaseResponse<List<TreasureRes.UserTreasureRes>> getUserTreasureList(@PathVariable Long userId){

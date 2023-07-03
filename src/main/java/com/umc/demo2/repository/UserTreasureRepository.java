@@ -22,6 +22,8 @@ public interface UserTreasureRepository extends JpaRepository<UserTreasure, Long
     Long countAllByUserId(Long userId);
 
 
+    List<UserTreasure> findAllByTreasureId(Long treasureId);
+
     @Query(value = "SELECT COUNT(UT.user_id) AS count, U.nickname AS nickname FROM user_treasure UT\n" +
             "                                  join user U on UT.user_id = U.user_id\n" +
             "                                  GROUP BY UT.user_id\n" +
