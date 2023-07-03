@@ -20,4 +20,8 @@ public class User {
 
     private String nickname;
 
+    public void update(String nickname){
+        this.nickname=nickname;
+    }
+
 }
