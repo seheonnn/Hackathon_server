@@ -3,6 +3,7 @@ package com.umc.demo2.controller;
 import com.umc.demo2.domain.UserTreasure;
 import com.umc.demo2.dto.TreasureRes;
 import com.umc.demo2.global.BaseResponse;
+import com.umc.demo2.repository.UserTreasureRepository;
 import com.umc.demo2.service.UserTreasureService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +34,11 @@ public class UserTreasureController {
     @GetMapping("/user/{userId}/treasures/count")
     public BaseResponse<TreasureRes.UserSuccessTreasureCount> countUserTreasureList(@PathVariable Long userId){
         return new BaseResponse<>(userTreasureService.countUserTreasureList(userId));
+    }
+
+    @GetMapping("/rank")
+    public BaseResponse<List<UserTreasureRepository.TheMostMissions>> getTheMostMissions(){
+        return new BaseResponse<>(userTreasureService.getTheMostMissions());
     }
 
 }
