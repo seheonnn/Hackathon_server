@@ -29,5 +29,10 @@ public class UserTreasure {
 
     private int status;
 
+    public UserTreasure update(String comment){
+        this.comment=comment;
+        return this;
+    }
+
 
 }
