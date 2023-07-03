@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class UserTreasure {
+public class UserTreasure extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

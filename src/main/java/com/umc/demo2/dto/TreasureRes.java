@@ -2,7 +2,32 @@ package com.umc.demo2.dto;
 
 import lombok.*;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 public class TreasureRes {
+
+    @Builder
+    @Getter
+    @AllArgsConstructor(access = AccessLevel.PROTECTED)
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class UserTreasure{
+
+        private Long userId;
+        private String comment;
+
+    }
+
+    @Builder
+    @Getter
+    @AllArgsConstructor(access = AccessLevel.PROTECTED)
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
+    public static class UserTreasureListDto{
+
+        private List<TreasureRes.UserTreasure> UserTreasureDtoList;
+
+
+    }
 
 
     @Builder

@@ -49,6 +49,7 @@ public class UserTreasureService {
 
     }
 
+    public List<UserTreasure> findAllByTreasureId(Long treasureId){ return userTreasureRepository.findAllByTreasureId(treasureId);}
 
     public List<TreasureRes.UserTreasureRes> getUserTreasureList(Long userId){
         List<TreasureRes.UserTreasureRes> result = new ArrayList<>();

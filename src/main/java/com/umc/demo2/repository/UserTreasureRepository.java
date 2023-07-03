@@ -18,4 +18,6 @@ public interface UserTreasureRepository extends JpaRepository<UserTreasure, Long
 
     Long countAllByUserId(Long userId);
 
+    List<UserTreasure> findAllByTreasureId(Long treasureId);
+
 }
