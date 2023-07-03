@@ -31,7 +31,7 @@ public class UserTreasureController {
     }
 
     @GetMapping("/user/{userId}/treasures/count")
-    public BaseResponse<Long> countUserTreasureList(@PathVariable Long userId){
+    public BaseResponse<TreasureRes.UserSuccessTreasureCount> countUserTreasureList(@PathVariable Long userId){
         return new BaseResponse<>(userTreasureService.countUserTreasureList(userId));
     }
 

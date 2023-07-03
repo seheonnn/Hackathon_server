@@ -13,4 +13,17 @@ public class TreasureRes {
         private String treasureTitle;
         private String comment;
     }
+
+
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @Getter
+    @Setter
+    public static class UserSuccessTreasureCount{
+        private String nickname;
+        private Long totalTreasure;
+        private Long totalPlant;
+        private Long leftTreasure;
+    }
 }
