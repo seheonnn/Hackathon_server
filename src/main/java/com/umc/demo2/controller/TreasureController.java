@@ -2,6 +2,7 @@ package com.umc.demo2.controller;
 
 import com.umc.demo2.domain.Treasure;
 import com.umc.demo2.dto.Location;
+import com.umc.demo2.dto.TreasureRes;
 import com.umc.demo2.dto.TreasureReq;
 import com.umc.demo2.global.BaseResponse;
 import com.umc.demo2.service.TreasureService;
@@ -24,9 +25,18 @@ public class TreasureController {
         return new BaseResponse<>(treasureService.getTreasure(location.getLatitude(), location.getLongitude()));
     }
 
+
+
+    @GetMapping("/{treasureId}")
+    public BaseResponse<Treasure> getTreasureList(@PathVariable Long treasureId){
+        return new BaseResponse<>(treasureService.findByTreasureId(treasureId));
+      
+    }
+
     @PostMapping("")
     public BaseResponse<String> postTreasure(@RequestBody TreasureReq.PostTreasure postTreasure) {
         treasureService.postTreasure(postTreasure);
         return new BaseResponse<>("보물이 저장되었습니다");
+
     }
 }

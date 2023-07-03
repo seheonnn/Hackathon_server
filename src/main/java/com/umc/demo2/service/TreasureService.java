@@ -1,6 +1,7 @@
 package com.umc.demo2.service;
 
 import com.umc.demo2.domain.Treasure;
+import com.umc.demo2.domain.UserTreasure;
 import com.umc.demo2.dto.TreasureReq;
 import com.umc.demo2.global.BaseException;
 import com.umc.demo2.global.BaseResponseStatus;
@@ -34,6 +35,11 @@ public class TreasureService {
 //        log.info(String.valueOf(endY));
 
         return treasureRepository.findWithinMap(startX, endX, startY, endY);
+    }
+
+
+    public Treasure findByTreasureId(Long treasureId){ 
+        return treasureRepository.findByTreasureId(treasureId);
     }
 
     public void postTreasure(TreasureReq.PostTreasure postTreasure) {
