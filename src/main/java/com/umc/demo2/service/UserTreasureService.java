@@ -84,6 +84,12 @@ public class UserTreasureService {
 
         return result;
     }
-  
-  
+
+
+    public List<UserTreasureRepository.TheMostMissions> getTheMostMissions(){
+        List<UserTreasureRepository.TheMostMissions> result = userTreasureRepository.getTheMostMissionList();
+        return result;
+    }
+
+
 }
