@@ -42,10 +42,20 @@ public class UserTreasureService {
         return result;
     }
 
-    public Long countUserTreasureList(Long userId){
+    public TreasureRes.UserSuccessTreasureCount countUserTreasureList(Long userId){
         //List<UserTreasure> userTreasures = userTreasureRepository.findAllByUserId(userId);
-        Long cnt = userTreasureRepository.countAllByUserId(userId);
 
-        return cnt;
+        Long all = userTreasureRepository.countAllByUserId(userId);
+        User user = userRepository.findUserByUserId(userId);
+
+        TreasureRes.UserSuccessTreasureCount result = new TreasureRes.UserSuccessTreasureCount(
+                user.getNickname(),
+                all,
+                all/4,
+                all%4
+        );
+
+
+        return result;
     }
 }
