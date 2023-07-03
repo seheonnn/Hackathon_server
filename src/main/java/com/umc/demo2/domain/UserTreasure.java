@@ -2,8 +2,10 @@ package com.umc.demo2.domain;
 
 
 import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "user_treasure")
 @Getter
@@ -26,7 +28,9 @@ public class UserTreasure extends BaseEntity{
 
     private String comment;
 
-    //photo
+    @Column(name = "files")
+    private String files;
+
 
     private int status;
 
