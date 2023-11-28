@@ -21,9 +21,17 @@ Back-End : <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-fl
 
 # 📺 프로젝트 화면 구성
 
-| 메인 화면 | 미션 화면 |
+| 메인 화면 | 미션 화면 | 여행지 상세 화면 |
+| ------------ | ------------ | ------------ |
+| <img width="300" alt="1" src="https://github.com/seheonnn/Hackathon_server/assets/101795921/e1477db6-38e6-4a07-8d34-b8ecb624d58b"> | <img width="300" alt="2" src="https://github.com/seheonnn/Hackathon_server/assets/101795921/a94b9974-8843-4caa-b4c3-3b5d905f4fc6"> | <img width="300" alt="3" src="https://github.com/seheonnn/Hackathon_server/assets/101795921/239153b7-75e4-45d0-9582-b603c9bd2621"> |
+
+| 로그인 화면 | 미션 상세 화면 | 사용자 설정 화면 |
+| ------------ | ------------ | ------------ |
+| <img width="300" alt="4" src="https://github.com/seheonnn/Hackathon_server/assets/101795921/8f2aba77-ab4c-4d9a-a925-2b17b1052e95"> | <img width="300" alt="5" src="https://github.com/seheonnn/Hackathon_server/assets/101795921/201311ac-130b-4f10-8337-bb3e93f66e4e"> | <img width="300" alt="6" src="https://github.com/seheonnn/Hackathon_server/assets/101795921/3ad54fe9-2ce2-46f7-a156-fff5748d8885"> |
+
+| 내 미션 | 식물 화면 | 
 | ------------ | ------------ |
-| <img width="300" alt="1" src="https://github.com/seheonnn/Hackathon_server/assets/101795921/e1477db6-38e6-4a07-8d34-b8ecb624d58b"> | <img width="300" alt="2" src="https://github.com/seheonnn/Hackathon_server/assets/101795921/a9579574-f6d9-4053-86ab-6b56d72ba24f"> |
+| <img width="300" alt="4" src="https://github.com/seheonnn/Hackathon_server/assets/101795921/d9b65034-4023-4165-a36c-c310f9f3f8aa"> | <img width="800" alt="5" src="https://github.com/seheonnn/Hackathon_server/assets/101795921/8ceff4a2-274e-45e1-b143-7752e0b75e4f"> |
 
 | 서비스 소개 |
 | ------------------ |
