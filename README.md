@@ -21,6 +21,10 @@ Back-End : <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-fl
 
 # 📺 프로젝트 화면 구성
 
+| 메인 화면 | 미션 화면 |
+| ------------ | ------------ |
+| <img width="300" alt="1" src="https://github.com/seheonnn/Hackathon_server/assets/101795921/e1477db6-38e6-4a07-8d34-b8ecb624d58b"> | <img width="300" alt="2" src="https://github.com/seheonnn/Hackathon_server/assets/101795921/a9579574-f6d9-4053-86ab-6b56d72ba24f"> |
+
 | 서비스 소개 |
 | ------------------ |
 | ![image](https://github.com/UMCHackathon/Hackathon_client/assets/97819580/395aafcf-fbee-4de8-9509-cf82d009fab2) |
